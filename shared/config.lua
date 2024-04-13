@@ -1,29 +1,31 @@
 Config = {}
 
+-- To chang the notify go to the top of the client file find 'change notify here', i tried to set it up so you could use different notify systems easily
+
 -- Config for install file --
-Config.Inventory = 'qb-inventory'
-Config.ImagePath = '/html/images/'
+Config.Inventory = 'qb-inventory' -- inventory folder name
+Config.ImagePath = '/html/images/' -- path from within the inventory folder
 -- ----------------------- --
 
 Config.Items = {
     cigarette = {
-        name = 'cigarette',
-        label = 'Cigarette',
-        weight = 1,
-        type = 'item',
-        image = 'cigarette.png',
-        useable = true,
-        unique = true,
-        shouldClose = true,
-        combinable = nil,
-        description = '',
-        stress = math.random(1, 10) * -1,
-        emoteName = 'smoke3',
-        canCancel = false,
-        canWalk = true,
-        timeLength = Config.Items.cigarette.stress * -1, -- in seconds
-        amountUsed = 100,
-        progressLabel = 'Smoking a cigarette'
+        name = 'cigarette', -- item name
+        label = 'Cigarette', -- item label
+        weight = 1, -- item weight
+        type = 'item', -- item type
+        image = 'cigarette.png', --item image
+        useable = true, -- item can be used
+        unique = true, -- item can be stacked
+        shouldClose = true, -- should close inventory on use
+        combinable = nil, -- can be combined with another item
+        description = '', -- item description
+        stress = math.random(1, 10) * -1, -- the amount of stress added from using the item (make negative to subtract stress like I have it in the example)
+        emoteName = 'smoke3', -- name of the emote used (this is made for dp or rpemotes any other emote menu you will have to find the 'change emote event here' on the client and change to your event/export)
+        canCancel = false, -- can cancel the action, won't remove the item or effect stress
+        canWalk = true, -- can walk while using emote, don't think this works with all scenarios
+        timeLength = Config.Items.cigarette.stress * -1, -- in seconds for how long the progressbar runs
+        amountUsed = 100, -- percentage of the item used each time the emote is ran
+        progressLabel = 'Smoking a cigarette' -- label of the progressbar that is seen on uses
     },
     vape = {
         name = 'vape',
