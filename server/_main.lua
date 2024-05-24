@@ -19,7 +19,9 @@ RegisterServerEvent('k-stressrelief:server:relive_stress', function(itemName, it
     end
     if not Player.PlayerData.metadata.stress then Player.PlayerData.metadata.stress = 0 end
     local newStress = Player.PlayerData.metadata.stress + itemData.stress
+    if newStress < 0 then newStress = 0 end
     Player.Functions.SetMetaData('stress', newStress)
+    TriggerClientEvent('hud:client:UpdateStress', src, newStress)
     notify(src, Lang:t('success.title'), Lang:t('success.label'), 'success', 5000)
 end)
 
