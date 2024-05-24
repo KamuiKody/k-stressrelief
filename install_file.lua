@@ -60,6 +60,6 @@ AddEventHandler('onResourceStart', function(resource)
     for k, v in pairs(Config.Items) do
         local sourcePath = sourceDirectory .. v.image
         local destinationPath = inventoryImagePath .. v.image
-        copyFile(sourcePath, destinationPath)
+        CopyFile(sourcePath, destinationPath)
     end
 end)
