@@ -23,7 +23,7 @@ Config.Items = {
         emoteName = 'smoke3', -- name of the emote used (this is made for dp or rpemotes any other emote menu you will have to find the 'change emote event here' on the client and change to your event/export)
         canCancel = false, -- can cancel the action, won't remove the item or effect stress
         canWalk = true, -- can walk while using emote, don't think this works with all scenarios
-        timeLength = Config.Items.cigarette.stress * -1, -- in seconds for how long the progressbar runs
+        timeLength = math.random(1, 10), -- in seconds for how long the progressbar runs
         amountUsed = 100, -- percentage of the item used each time the emote is ran
         progressLabel = 'Smoking a cigarette' -- label of the progressbar that is seen on uses
     },
@@ -42,7 +42,7 @@ Config.Items = {
         emoteName = '',
         canCancel = false,
         canWalk = true,
-        timeLength = Config.Items.vape.stress * -1, -- in seconds
+        timeLength = math.random(1, 2), -- in seconds
         amountUsed = 1,
         progressLabel = 'Hitting a Vape'
     },
@@ -61,7 +61,7 @@ Config.Items = {
         emoteName = 'notepad',
         canCancel = true,
         canWalk = true,
-        timeLength = Config.Items.diary.stress * -1, -- in seconds
+        timeLength = math.random(10, 30), -- in seconds
         amountUsed = 50,
         progressLabel = 'Writing in Diary'
     },
