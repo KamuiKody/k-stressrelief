@@ -14,7 +14,7 @@ RegisterNetEvent('k-stressrelief:client:useItem', function(itemName, itemSlot)
     if not QBCore.Functions.HasItem(itemName) then return notify(Lang:t('error.title'), Lang:t('error.label'), 'error', 5000) end -- change HasItem here
     local itemData = Config.Items[itemName]
     TriggerEvent('animations:client:EmoteCommandStart', {itemData.emoteName}) -- change emote event here
-    QBCore.Functions.Progressbar('releive_stress', itemData.progressLabel, 5000, false, itemData.canCancel, {
+    QBCore.Functions.Progressbar('releive_stress', itemData.progressLabel, itemData.timeLength * 1000, false, itemData.canCancel, {
         disableMovement = itemData.canWalk,
         disableCarMovement = true,
         disableMouse = false,
