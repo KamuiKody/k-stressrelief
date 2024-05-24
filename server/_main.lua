@@ -32,8 +32,8 @@ AddEventHandler('onResourceStart', function(resourceName)
     if GetCurrentResourceName() ~= resourceName then return end
     if Config.Items then exports['qb-core']:AddItems(Config.Items) end
     for name, itemData in pairs(Config.Items) do      
-        local sourcePath = sourceDirectory .. v.image
-        local destinationPath = inventoryImagePath .. v.image
+        local sourcePath = sourceDirectory .. itemData.image
+        local destinationPath = inventoryImagePath .. itemData.image
         CopyFile(sourcePath, destinationPath)
         QBCore.Functions.CreateUseableItem(name , function(source, item)
             local Player = QBCore.Functions.GetPlayer(source)
