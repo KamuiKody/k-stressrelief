@@ -1,8 +1,9 @@
 
 local QBCore = exports['qb-core']:GetCoreObject()
-local resourceName = GetCurrentResourceName()
-local sourceDirectory = GetResourcePath(resourceName) .."/images/"
-local inventoryImagePath = GetResourcePath('qb-inventory').."/html/images/"
+local resourceName, sourceDirectory, inventoryImagePath
+resourceName = GetCurrentResourceName()
+sourceDirectory = GetResourcePath(resourceName) .."/images/"
+inventoryImagePath = GetResourcePath('qb-inventory').."/html/images/"
 
 local function printColored(text, colorCode)
     print(colorCode .. text .. "\27[0m")
